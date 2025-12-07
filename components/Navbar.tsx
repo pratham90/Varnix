@@ -11,7 +11,7 @@ const Navbar = () => {
         ☰
       </button>
       <ul className={`flex flex-col sm:flex-row gap-3 sm:gap-6 md:gap-8 lg:gap-12 items-center w-full sm:w-auto ${open ? "block" : "hidden sm:flex"} pb-2 sm:pb-0`}>
-        <li><Link href="/" className="hover:text-pink-500 transition">Home</a></li>
+        <li><Link href="/" className="hover:text-pink-500 transition">Home</Link></li>
         <li><a href="#" className="hover:text-pink-500 transition">About</a></li>
         <li><a href="#" className="hover:text-pink-500 transition">Our Services</a></li>
         <li><Link href="/our-works" className="hover:text-pink-500 transition">Our Works</Link></li>
