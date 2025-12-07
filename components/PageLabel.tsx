@@ -3,7 +3,7 @@ import React from 'react'
 const PageLabel = ({title}: {title: string}) => {
   return (
    <div className="relative overflow-hidden w-full ">
-        <div className="flex animate-marquee whitespace-nowrap text-9xl font-bold tracking-tight text-black ">
+        <div className="flex animate-marquee whitespace-nowrap text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-9xl font-bold tracking-tight text-black ">
           <span className="mx-10">{title}</span>
           <span className="mx-10">{title}</span>
           <span className="mx-10">{title}</span>
