@@ -14,7 +14,7 @@ const Navbar = () => {
         <li><a href="#" className="hover:text-pink-500 transition">Home</a></li>
         <li><a href="#" className="hover:text-pink-500 transition">About</a></li>
         <li><a href="#" className="hover:text-pink-500 transition">Our Services</a></li>
-        <li><a href="#" className="hover:text-pink-500 transition">Our Works</a></li>
+        <li><Link href="/our-works" className="hover:text-pink-500 transition">Our Works</Link></li>
         <li><a href="#" className="hover:text-pink-500 transition">Blogs</a></li>
       </ul>
       <Link href="/contact-us" className="bg-pink-500 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 text-white rounded-2xl mt-0 sm:mt-0 hover:bg-pink-600 transition text-sm sm:text-base w-full sm:w-auto text-center sm:text-left">Contact Us</Link>
