@@ -1,5 +1,6 @@
 'use client'
 import React from "react";
+import Link  from "next/link";
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
@@ -16,7 +17,7 @@ const Navbar = () => {
         <li><a href="#" className="hover:text-pink-500">Our Works</a></li>
         <li><a href="#" className="hover:text-pink-500">Blogs</a></li>
       </ul>
-      <a href="#contact" className="bg-pink-500 px-2 py-1 text-white rounded-2xl mt-2 sm:mt-0 hover:bg-pink-600 transition">Contact Us</a>
+      <Link href="/contact-us" className="bg-pink-500 px-2 py-1 text-white rounded-2xl mt-2 sm:mt-0 hover:bg-pink-600 transition">Contact Us</Link>
     </nav>
   );
 };

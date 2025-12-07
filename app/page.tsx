@@ -2,6 +2,7 @@ import Aboutus from "@/components/Aboutus";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import OurClients from "@/components/OurClients";
+import Label from "@/components/Label";
 import { FaQuoteLeft } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 import Image from "next/image";
@@ -191,37 +192,7 @@ export default function Home() {
       </div>
 
      <OurClients />
-      <div className="relative overflow-hidden w-full my-10">
-        <div className="flex animate-marquee whitespace-nowrap text-9xl font-bold tracking-tight text-gray-300 ">
-          <span className="mx-10">*Design</span>
-          <span className="mx-10">*Marketing</span>
-          <span className="mx-10">*Content</span>
-          <span className="mx-10">*Design</span>
-          <span className="mx-10">*Marketing</span>
-          <span className="mx-10">*Content</span>
-
-          {/* Duplicate */}
-          <span className="mx-10">*Design</span>
-          <span className="mx-10">*Marketing</span>
-          <span className="mx-10">*Content</span>
-          <span className="mx-10">*Design</span>
-          <span className="mx-10">*Marketing</span>
-          <span className="mx-10">*Content</span>
-        </div>
-
-        <style>{`
-            .animate-marquee {
-              animation: marquee 10s linear infinite;
-            }
-            .relative:hover .animate-marquee {
-              animation-play-state: paused;
-            }
-            @keyframes marquee {
-              0%   { transform: translateX(0); }
-              100% { transform: translateX(-50%); }
-            }
-          `}</style>
-      </div>
+     <Label />
     
       <Footer />
     </main>
