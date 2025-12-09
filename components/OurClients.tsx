@@ -14,56 +14,56 @@ const OurClients = () => {
                 alt="Clients Logos"
                 width={250}
                 height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[30%] h-40 sm:h-50 md:h-60 object-cover'
+                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
             />
             <Image
                 src="/img1.avif"
                 alt="Clients Logos"
                 width={250}
                 height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[30%] h-40 sm:h-50 md:h-60 object-cover'
+                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
             />
             <Image
                 src="/img1.avif"
                 alt="Clients Logos"
                 width={250}
                 height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[30%] h-40 sm:h-50 md:h-60 object-cover'
+                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
             />
             <Image
                 src="/img1.avif"
                 alt="Clients Logos"
                 width={250}
                 height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[30%] h-40 sm:h-50 md:h-60 object-cover'
+                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
             />
             <Image
                 src="/img1.avif"
                 alt="Clients Logos"
                 width={250}
                 height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[30%] h-40 sm:h-50 md:h-60 object-cover'
+                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
             />
             <Image
                 src="/img1.avif"
                 alt="Clients Logos"
                 width={250}
                 height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[30%] h-40 sm:h-50 md:h-60 object-cover'
+                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
             />
             <Image
                 src="/img1.avif"
                 alt="Clients Logos"
                 width={250}
                 height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[30%] h-40 sm:h-50 md:h-60 object-cover'
+                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
             />
             <Image
                 src="/img1.avif"
                 alt="Clients Logos"
                 width={250}
                 height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[30%] h-40 sm:h-50 md:h-60 object-cover'
+                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
             />
         </div>
       

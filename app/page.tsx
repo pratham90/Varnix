@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen bg-zinc-50 font-sans text-black overflow-x-hidden">
+    <main className="flex flex-col min-h-screen bg-white font-sans text-black overflow-x-hidden">
       <Navbar />
       <section className="flex flex-col items-center justify-start min-h-[50vh] sm:h-[60vh] tracking-tight text-4xl sm:text-6xl md:text-7xl lg:text-8xl py-8 sm:py-12 md:py-16 font-bold gap-2 sm:gap-4 px-4" aria-label="Hero">
         <h1 className="text-gray-200 text-center">Where Strategy</h1>
@@ -79,6 +79,7 @@ export default function Home() {
         </div>
         <div className="bg-gray-300 w-11/12 sm:w-6/7 h-0.5"></div>
       </section>
+     
       <section className="whyus bg-pink-50 py-6 sm:py-8 md:py-10 px-4 sm:px-8 md:px-16 lg:px-32 mt-10 z-10" aria-label="Why Us">
         <div className="flex flex-col items-center sm:items-end justify-start text-base sm:text-lg md:text-xl lg:text-2xl">
           <h2 className="text-pink-600 text-lg sm:text-xl mb-3 sm:mb-5 font-bold">Why Us?</h2>
