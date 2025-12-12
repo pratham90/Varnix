@@ -12,10 +12,10 @@ const Navbar = () => {
       </button>
       <ul className={`flex flex-col sm:flex-row gap-2 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-12 items-center w-full sm:w-auto ${open ? "block" : "hidden sm:flex"} pb-2 sm:pb-0`}>
         <li><Link href="/" className="hover:text-pink-500 transition text-sm sm:text-base md:text-lg">Home</Link></li>
-        <li><a href="#" className="hover:text-pink-500 transition text-sm sm:text-base md:text-lg">About</a></li>
-        <li><a href="#" className="hover:text-pink-500 transition text-sm sm:text-base md:text-lg">Our Services</a></li>
+        <li><Link href="/about-us" className="hover:text-pink-500 transition text-sm sm:text-base md:text-lg">About</Link></li>
+        <li><Link  href="/our-service" className="hover:text-pink-500 transition text-sm sm:text-base md:text-lg">Our Services</Link></li>
         <li><Link href="/our-works" className="hover:text-pink-500 transition text-sm sm:text-base md:text-lg">Our Works</Link></li>
-        <li><Link href="/detailed-blog" className="hover:text-pink-500 transition text-sm sm:text-base md:text-lg">Blogs</Link></li>
+        <li><Link href="/blog" className="hover:text-pink-500 transition text-sm sm:text-base md:text-lg">Blogs</Link></li>
       </ul>
       <Link href="/contact-us" className="bg-pink-500 px-3 sm:px-4 md:px-5 lg:px-6 py-1.5 sm:py-2 md:py-2.5 text-white rounded-xl sm:rounded-2xl mt-0 sm:mt-0 hover:bg-pink-600 transition text-xs sm:text-sm md:text-base lg:text-lg w-full sm:w-auto text-center sm:text-left">Contact Us</Link>
     </nav>
