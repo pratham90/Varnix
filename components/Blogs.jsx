@@ -4,24 +4,37 @@ import { FaInstagram, FaFacebookF, FaTwitter } from "react-icons/fa";
 // import { BiArrowToRight } from 'react-icons/bi';
 const Blogs = () => {
   return (
-    <div className='flex flex-col justify-start gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 my-4 sm:my-6 md:my-8 lg:my-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 text-black max-w-7xl mx-auto'>
-        <div className='flex flex-col justify-start items-center gap-2 sm:gap-3 md:gap-2'>
-          <p className='text-gray-300 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl  text-center'>Turning Engagement</p>
-          <p className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl tracking-wide text-center'>into Revenue</p>
+    <div className='flex flex-col justify-start gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 my-4 sm:my-6 md:my-8 lg:my-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 text-black max-w-7xl mx-auto overflow-x-hidden'>
+        <div className='flex flex-col justify-start items-center gap-2 sm:gap-3 md:gap-2 animate-fade-in-up'>
+          <p className='text-gray-300 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-7xl text-center'>Turning Engagement</p>
+          <p className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wide text-center'>into Revenue</p>
         </div>
-        <div className="text-justify flex flex-col justify-start items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
+        <div className="text-justify flex flex-col justify-start items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 animate-slide-in-right">
           <div className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
-         lor fugit sint odit atque perspiciatis minus est quis pariatur ut, dignissimos inventore quas veniam corporis? Alias saepe blanditiis dignissimos?
-          Voluptatem repudiandae neque ad soluta quibusdam in obcaecati maiores, modi itaque nemo doloremque mollitia ducimus dolorem facere culpa nam. Voluptatem corporis voluptas porro, quaerat esse delectus ducimus laboriosam veritatis molestias.
-          Rem, vel blanditiis atque voluptas repudiandae perferendis commodi fugit exercitationem laboriosam. Unde similique, dolorum rerum voluptas recusandae fuga quo ut. Voluptatem minus nostrum fuga nemo voluptas, officiis ipsa illum iusto.
-          Ex, cumque adipisci? Quaerat, sunt asperiores, quas pariatur, maiores ipsum officia ea ex iure quis amet praesentium. Sunt nisi voluptatem amet delectus tempora, aut, qui praesentium, pariatur corporis ad vitae!
-          Aut ullam ad eius, voluptatum suscipit, cum sint culpa commodi ipsam aperiam, nihil assumenda? Cum vero illo aut aliquam magni numquam, ducimus minima. Dolorum modi nam molestias commodi odit! Laboriosam.
-          Laborum tempore nulla ab quis! Vero odio dignissimos sit quibusdam non facilis quas mollitia, architecto, iste distinctio atque. Corrupti nostrum molestias magnam architecto aliquid eos non optio ullam voluptatum dolorum.
-          Placeat soluta nesciunt, velit commodi dolore culpa fugit quis qui ab id nemo, unde enim cupiditate ducimus voluptatem sed officia aut tempora optio vero. Velit similique impedit hic sed est!
-          Nisi voluptates velit placeat inventore ad ut eos harum sed cum minima odio quisquam odit, optio distinctio sequi excepturi doloremque quam enim, itaque iure totam facilis architecto. Quod, quia. Assumenda!
-          etur illum dolore nostrum atque amet eius consequuntur tenetur beatae soluta ex ut debitis unde veritatis quaerat illo!
-          Ex recusandae, officiis vel, ipsam est fugiat adipisci amet quae eos unde ratione eligendi corrupti reprehenderit vitae? Dolor, nemo sed illo quibusdam suscipit deleniti? Sequi aspernatur unde atque perspiciatis consequuntur?
-          Commodi nam facere laborum iure ex debitis assumenda natus ducimus.
+          Before fans cheer for your jersey number, they follow your stories. In today’s world, a powerful game isn’t enough, a powerful presence is.
+
+Introduction:
+Whether you’re a young athlete chasing your dream, a local club building your identity, or a professional team preparing for the next season one thing is certain: your online presence can make or break your brand.
+
+Gone are the days when fan bases were built only in stadiums. Now, they grow on screens. From Instagram reels to Twitter reactions and behind-the-scenes YouTube shorts your social presence is your first handshake with the world.
+
+Why It Truly Matters:
+🏆 Visibility Creates Value
+A consistent and engaging social presence makes people see you and not just during match day. It brings attention to your skills, your team culture, your hustle, and your story. The more visible you are, the more valuable your brand becomes not just to fans, but also to sponsors and collaborators.
+
+👥 It Builds a Loyal Fanbase
+Fans today want more than scores. They want a connection. Sharing locker room moments, training sessions, personal journeys, and fun banter helps create emotional bonds. A team that shares, grows. An athlete who connects, stays remembered.
+
+💰 Attracting Sponsors and Opportunities
+When a brand or sponsor looks at a team or player, the first thing they check is your online presence. Numbers matter, but more than that engagement matters. How often do people respond to your content? Do they relate, share, or cheer you on?
+A strong presence makes your brand sponsor-ready.
+
+📈 Professional Growth for Players
+For athletes, especially emerging ones, social media is like a digital portfolio. Highlight reels, training clips, achievement posts create an identity that reaches beyond your local circle. Scouts, agents, brands  they all notice.
+
+📣 Promoting Matches, Events, and Updates
+From announcing trials to hyping up final matches, social platforms are the fastest way to reach your audience. Posters, countdowns, reels, and interactive stories make sure no event goes unnoticed.
+
 
           </div>
           <Image
@@ -32,20 +45,27 @@ const Blogs = () => {
                 className='rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-4xl w-full h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[500px] object-cover'
             />
            <div className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
-           Delectus nesciunt similique unde animi libero molestias temporibus? Fugit illo, magnam excepturi ipsum dolores maiores! Et provident architecto harum sint!
-          Veritatis debitis accusamus temporibus voluptatem dolores expedita magni dolore, doloribus maxime odit enim beatae soluta recusandae? Pariatur qui quia cupiditate, impedit cumque ducimus repudiandae aspernatur delectus, minima corporis soluta voluptate!
-          Minima blanditiis iste dolorum nihil ipsa vitae hic obcaecati! Eos autem mollitia vitae, ut error maxime esse repellendus deserunt magnam nostrum, quia recusandae voluptatum ipsa possimus iure odio ullam? Amet!
-          Laudantium dolorem quaerat totam sapiente modi rem! Esse officia in repellendus inventore omnis, modi quia ex sit, quos cum illum ullam nobis error incidunt! Voluptatibus quas repudiandae eveniet quaerat exercitationem?
-          Hic sint vitae, earum assumenda expedita quas nihil, qui, a unde placeat deleniti molestias corrupti fugit commodi? Eligendi fugiat, est quos deserunt sapiente doloremque dolor aspernatur necessitatibus non. Aliquam, ab.
-          Veniam non hic eos, quos eveniet, odit at repellat placeat laboriosam, soluta veritatis officia delectus nemo autem nostrum id dicta aut voluptatum aliquid. Asperiores officiis maiores maxime enim ratione ipsa!
-          Officiis architecto perspiciatis illum quae, repudiandae quam pariatur unde obcaecati delectus voluptatum rem, officia tempore id, explicabo modi at velit voluptates soluta. Labore eaque delectus porro repellendus recusandae, aliquid dignissimos.
-          Reiciendis tenetur totam optio dolor labore.
-          <div className="mt-4 sm:mt-6">
-             Numquam autem aspernatur incidunt. Enim repellendus quaerat corporis cum ab, tempora earum quidem delectus eos animi? Laudantium impedit labore distinctio quasi voluptatem, magnam facere.
-          Repudiandae laborulores amet error aperiam possimus, voluptate quibusdam numquam quis magni. Consectetur doloremque blanditiis dolor mollitia quos odio quo, illum sequi.
-e. Libero nulla dolorem totam doloremque quod itaque molestiae tenetur vitae minus deleniti atque dolor, cum officia, esse id fugiat.
-          Vero, natus? Temporibus sint expedita consequatur. Nihil, totam in aspernatur corrupti repellendus quasi, voluptate sapiente tempore quis ducimus porro cumque iusto quibusdam nulla? Possimus nihil perspiciatis vel ut voluptatibus eos? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, placeat sapiente quia dolor magni est veritatis esse quae harum, et sunt minus. Tempore quidem quia facere minima optio distinctio numquam placeat dolorem excepturi voluptas suscipit nostrum laborum aliquid sequi quis inventore, sint ut aliquam, doloremque veritatis tempora fuga. At cupiditate et qui iure, dolorem doloribus similique, tempora minima deserunt necessitatibus saepe dignissimos dolorum repellendus sit, facilis itaque a magni odio molestiae accusantium! Quaerat dolore repellat rerum, eligendi id neque aut ut ad quo vitae accusantium assumenda fugit culpa natus, perferendis voluptate esse sunt eos, aliquam doloribus ab eveniet quibusdam cum!
-          </div>
+         
+What Makes a Strong Social Presence?
+Consistency: Post regularly. Stay visible even during off-seasons.
+
+Authenticity: Be real. Fans love to see effort, not perfection.
+
+Engagement: Reply, reshare, ask questions. Keep it two-way.
+
+Storytelling: Show the struggle, the prep, the fun, the wins, and even the losses.
+
+Team Language & Style: Stick to your vibe be it raw, energetic, disciplined, or quirky.
+
+In Real Life:
+Think about local leagues that went viral just because of good reels. Or athletes who went from small-town tournaments to brand campaigns all because someone noticed their journey online. That’s the power of digital storytelling and it starts with presence.
+
+Conclusion:
+In today’s sports world, your performance wins the game, but your social presence builds the brand. Whether you’re playing for passion, recognition, or the next big break showing up online matters.
+
+The ground is where you play. But the screen is where you grow.
+Make every post count. Build your story. Own your space.
+         
           </div>
         </div>
         <div className='text-black flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6'>

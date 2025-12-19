@@ -3,7 +3,6 @@ import PageLabel from "@/components/PageLabel";
 import OurClients from "@/components/OurClients";
 import Label from "@/components/Label";
 import Footer from "@/components/Footer";
-import { MdOutlineRealEstateAgent } from "react-icons/md";
 import IndustriesWeServe from "@/components/IndustriesWeServe";
 
 
@@ -12,7 +11,7 @@ const page = () => {
      <main className="bg-white text-black">
         <Navbar />
         <PageLabel title="*our works." />
-           <IndustriesWeServe />
+           <IndustriesWeServe iconColor="#db2777" />
         <OurClients />
         <Label />
         <Footer />

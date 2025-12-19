@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect } from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
@@ -31,7 +31,15 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="font-bold text-xl sm:text-2xl md:text-3xl text-black hover:text-pink-500 transition-colors duration-300">
-              Varnix
+            
+              <Image 
+                src="/VARNIX.png" 
+                alt="Varnix Logo" 
+                width={120} 
+                height={40} 
+                className="h-8 sm:h-10 md:h-12 w-auto"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -95,7 +103,7 @@ const Navbar = () => {
           onClick={closeMenu}
         ></div>
 
-        {/* Mobile Menu */}
+       
         <div 
           className={`md:hidden fixed top-16 left-0 right-0 bg-white shadow-2xl z-40 transition-transform duration-300 ease-out ${
             open ? 'translate-y-0' : '-translate-y-full'
@@ -147,7 +155,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      {/* Spacer to prevent content from going under fixed navbar */}
+   
       <div className="h-16 md:h-20"></div>
     </>
   );

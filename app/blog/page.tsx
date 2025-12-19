@@ -12,29 +12,29 @@ const page = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "How Small Brands Can Win Big With Paid Ads",
-      description: "lorem ipsum dolor sit amet, consectetur adipiscing elit, nulla ornare eget felis rhoncus ornare. mauris. ipsum dolor sit amet, consectetur adipiscing",
+      title: "Why Social Presence Matters for Sports Teams and Athletes",
+      description: "Before fans cheer for your jersey number, they follow your stories. In today’s world, a powerful game isn’t enough, a powerful presence is. Introduction: Whether you’re a young athlete chasing…",
       image: "/img1.avif",
       featured: true
     },
     {
       id: 2,
-      title: "Turning Engagement into Revenue",
-      description: "",
+      title: "Why AI is the Smartest Partner for Your Marketing Success Today",
+      description: " a world where every scroll, click, and swipe counts, businesses no longer compete on creativity alone, they compete on speed, precision, and adaptability. That’s where AI steps in. Introduction: …",
       image: "",
       featured: false
     },
     {
         id: 3,
-        title: "Turning Engagement into Revenue",
-        description: "",
+        title: "How to Prep for a Successful Marketing Campaign",
+        description: "If you’re thinking about running a marketing campaign, don’t just dive in plan smart. Whether you want to promote a new product, boost your brand presence, or get more people…",
         image: "",
         featured: false
       },
     {
       id: 4,
-      title: "Why Social Media Strategy Drives Real Results",
-      description: "",
+      title: "How Digital Marketing Helps Your Business Grow Rapidly in Today’s Digital World",
+      description: "In a world that’s always online, the way we do business has changed and changed fast. From startups to legacy brands, businesses today aren’t just relying on word of mouth…",
       image: "",
       featured: false
     },
@@ -47,15 +47,15 @@ const page = () => {
     },
     {
       id: 6,
-      title: "Maximize Your Brand with Social Media Marketing",
-      description: "lorem ipsum dolor sit amet, consectetur adipiscing elit, nulla ornare eget felis rhoncus ornare.",
+      title: "How Digital Marketing Helps Your Business Grow Rapidly in Today’s Digital World",
+      description: "In a world that’s always online, the way we do business has changed and changed fast. From startups to legacy brands, businesses today aren’t just relying on word of mouth…",
       image: "/img1.avif",
       featured: false
     },
     {
       id: 7,
-      title: "The Secret Sauce Behind Viral Campaigns",
-      description: "lorem ipsum dolor sit amet, consectetur adipiscing elit, nulla ornare eget felis rhoncus ornare.",
+      title: "How Digital Marketing Helps Your Business Grow Rapidly in Today’s Digital World",
+      description: "In a world that’s always online, the way we do business has changed and changed fast. From startups to legacy brands, businesses today aren’t just relying on word of mouth…",
       image: "/img1.avif",
       featured: false
     }
@@ -66,10 +66,10 @@ const page = () => {
   const gridPosts = blogPosts.filter(post => !post.featured && post.image)
 
   return (
-    <main className="w-full min-h-screen flex flex-col justify-start items-center gap-5 sm:gap-8 md:gap-8 bg-white">
+    <main className="w-full min-h-screen flex flex-col justify-start items-center gap-5 sm:gap-8 md:gap-8 bg-white overflow-x-hidden">
       <Navbar />
       <PageLabel title="*our blogs." />
-      <section className="w-full  max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-6 sm:mt-8 md:mt-10">
+      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-6 sm:mt-8 md:mt-10 animate-fade-in-up">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-8">
           <div className="flex flex-col gap-3 md:gap-4">
             <h1 className="text-gray-300 italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light">blogs</h1>
@@ -85,7 +85,7 @@ const page = () => {
         <div className="bg-gray-300 w-full h-px mt-8"></div>
       </section>
 
-      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-8 sm:mt-10 md:mt-12">
+      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-8 sm:mt-10 md:mt-12 animate-slide-in-right">
         <div className="flex flex-col lg:flex-row gap-8 md:gap-10 lg:gap-12">
           {featuredPost && (
             <div className="flex-1 lg:flex-[1.2]">
@@ -128,7 +128,7 @@ const page = () => {
         </div>
       </section>
 
-      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-8 sm:mt-10 md:mt-12 mb-5 sm:mb-6 md:mb-8">
+      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-8 sm:mt-10 md:mt-12 mb-5 sm:mb-6 md:mb-8 animate-fade-in-up">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
           {gridPosts.map((post) => (
             <Link key={post.id} href="/detailed-blog" className="group">

@@ -8,55 +8,287 @@ import Image from 'next/image'
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
 import { FaInstagram, FaFacebookF } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
+import Link from 'next/link';
 
-const page = () => {
+const OurServicePage = () => {
+  const slides = [
+    {
+      title: 'Brand Strategy & Identity',
+      tagline: 'Clarity before creativity.',
+      services: [
+        'Brand audits',
+        'Naming',
+        'Identity design (logo, color system, typography)',
+        'Rebranding strategies',
+        'Competitive landscape & persona mapping',
+      ],
+      image: '/img1.avif',
+      alt: 'Brand Strategy & Identity',
+    },
+    {
+      title: 'Social Media & Community Building',
+      tagline: 'Build followers. Convert fans.',
+      services: [
+        'Custom monthly content calendars',
+        'Platform-first strategies (Reels, Shorts, Carousels)',
+        'Influencer tie-ups',
+        'Real-time moment marketing',
+        'Social listening & fan nurturing',
+      ],
+      image: '/img1.avif',
+      alt: 'Social Media & Community Building',
+    },
+    {
+      title: 'Creative Content Production',
+      tagline: 'Your story, visually told—better.',
+      services: [
+        'Brand films',
+        'Product videos & ad films',
+        'Short-form video (AI, scripted, animation)',
+        'Podcast, webinar & livestream content',
+        'Voice-overs, post-production',
+        'Motion graphics, cinematic edits',
+        '3-D mock-ups & packaging videos',
+      ],
+      image: '/img1.avif',
+      alt: 'Creative Content Production',
+    },
+    {
+      title: 'Performance Marketing',
+      tagline: 'Every penny you spend should return two.',
+      services: [
+        'Meta Ads, Google PPC, YouTube ads',
+        'Funnel-based campaigns (Lead Gen, Sales)',
+        'E-commerce scaling via Shopify & Woo',
+        'Retargeting, pixel tracking & segmentation',
+        'A/B testing creatives & landing pages',
+      ],
+      image: '/img1.avif',
+      alt: 'Performance Marketing',
+    },
+    {
+      title: 'Public Relations',
+      tagline: 'Brand reputation is brand equity.',
+      services: [
+        'Press releases & media distribution',
+        'Thought-leadership content for CXOs',
+        'B2B marketing & investor storytelling',
+        'Crisis-communication frameworks',
+        'Awards submissions & panel coordination',
+      ],
+      image: '/img1.avif',
+      alt: 'Public Relations',
+    },
+    {
+      title: 'Web, SEO & Digital Infrastructure',
+      tagline: 'Your digital home must match your ambition.',
+      services: [
+        'Website design & dev (Webflow, WP, Shopify)',
+        'UX/UI optimisation & mobile-first design',
+        'SEO, backlinks & keyword analysis',
+        'Landing pages, lead funnels & automations',
+        'Hosting, security & integrations',
+      ],
+      image: '/img1.avif',
+      alt: 'Web, SEO & Digital Infrastructure',
+    },
+    {
+      title: 'AI-Powered Content & Innovation',
+      tagline: 'Where human creativity meets machine intelligence.',
+      services: [
+        'AI-generated video & ad content',
+        'Prompt engineering for rapid campaigns',
+        'Voice cloning, avatar scripting & twins',
+        'Automated copy & visual-creation tools',
+        'AI-driven content analytics',
+      ],
+      image: '/img1.avif',
+      alt: 'AI-Powered Content & Innovation',
+    },
+    {
+      title: 'Sponsorship Management',
+      tagline: 'Strategic partnerships. Sustained value.',
+      services: [
+        'Brand collaborations aligned to your values',
+        'Creative, high-impact activations',
+        'ROI-driven partnership models',
+        'End-to-end management & reporting',
+      ],
+      image: '/img1.avif',
+      alt: 'Sponsorship Management',
+    },
+    {
+      title: 'Talent, Athlete & Team Management',
+      tagline: 'Personalised brand-building for long-term success.',
+      services: [
+        'Career blueprints for long-term growth',
+        'Holistic brand development for talent',
+        'Media, PR & personal-brand support',
+        'Performance strategies & endorsements',
+        'Dedicated team for scaling & reputation',
+      ],
+      image: '/img1.avif',
+      alt: 'Talent, Athlete & Team Management',
+    },
+  ]
+
+  const [currentSlide, setCurrentSlide] = React.useState(0)
+  const [isTransitioning, setIsTransitioning] = React.useState(false)
+  const [direction, setDirection] = React.useState<'left' | 'right'>('right')
+
+  const handlePrev = () => {
+    if (isTransitioning) return
+    setDirection('left')
+    setIsTransitioning(true)
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+    setTimeout(() => setIsTransitioning(false), 500)
+  }
+
+  const handleNext = () => {
+    if (isTransitioning) return
+    setDirection('right')
+    setIsTransitioning(true)
+    setCurrentSlide((prev) => (prev + 1) % slides.length)
+    setTimeout(() => setIsTransitioning(false), 500)
+  }
+
+  const goToSlide = (index: number) => {
+    if (isTransitioning) return
+    setDirection(index > currentSlide ? 'right' : 'left')
+    setIsTransitioning(true)
+    setCurrentSlide(index)
+    setTimeout(() => setIsTransitioning(false), 500)
+  }
+
+  const activeSlide = slides[currentSlide]
+
   return (
-    <main className="w-full min-h-screen flex flex-col bg-white relative">
+    <main className="w-full min-h-screen flex flex-col bg-white relative overflow-x-hidden">
      
         <Navbar />
-        <PageLabel title="our services" />
-      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-8 sm:mt-10 md:mt-15">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black">search engine optimization.</h1>
+        <PageLabel title="our services"/>
+      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-10 sm:mt-12 md:mt-16">
+        
+
+       
+        <div className="relative mb-12 md:mb-16 min-h-[500px] bg-gray-50 sm:min-h-[600px] md:min-h-[650px] overflow-hidden">
+        <div className="flex  flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-12 gap-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black">
+            Our Services
+          </h1>
           <div className="flex items-center gap-4 mt-4 md:mt-0">
             <div className="flex gap-2">
-              <button className="p-2 hover:bg-gray-100 rounded transition">
+              <button
+                type="button"
+                onClick={handlePrev}
+                disabled={isTransitioning}
+                className="p-2 hover:bg-gray-100 rounded transition disabled:opacity-50 disabled:cursor-not-allowed"
+                aria-label="Previous service"
+              >
                 <BsArrowLeft className="text-xl sm:text-2xl text-black" />
               </button>
-              <button className="p-2 hover:bg-gray-100 rounded transition">
+              <button
+                type="button"
+                onClick={handleNext}
+                disabled={isTransitioning}
+                className="p-2 hover:bg-gray-100 rounded transition disabled:opacity-50 disabled:cursor-not-allowed"
+                aria-label="Next service"
+              >
                 <BsArrowRight className="text-xl sm:text-2xl text-black" />
               </button>
             </div>
-            <button className="bg-pink-500 text-white px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base md:text-lg rounded-lg hover:bg-pink-600 transition">
-              Book Service
+           <Link href="/contact-us"> <button className="bg-pink-500 text-white px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base md:text-lg rounded-lg hover:bg-pink-600 transition">
+              Contact Us
             </button>
+            </Link>
+          </div>
+        </div>
+          <div
+            key={currentSlide}
+            className={`w-full bg-gray-50 rounded-2xl sm:rounded-3xl  p-6 sm:p-8 md:p-10 lg:p-12 transition-all duration-100 ease-in-out ${
+              isTransitioning
+                ? direction === 'right'
+                  ? 'opacity-0 scale-95 translate-x-8'
+                  : 'opacity-0 scale-95 -translate-x-8'
+                : 'opacity-100 scale-100 translate-x-0'
+            }`}
+          >
+            <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16">
+          
+              <div className="flex-1 flex flex-col gap-6 md:gap-8">
+              
+
+              
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black">
+                  {activeSlide.title}
+                </h2>
+
+               
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 italic">
+                  {activeSlide.tagline}
+                </p>
+
+                
+                <div className="flex flex-col gap-3 sm:gap-4 mt-2">
+                  {activeSlide.services.map((service, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-3"
+                    >
+                      <div className="mt-1.5 shrink-0">
+                        <svg
+                          className="w-5 h-5 sm:w-6 sm:h-6 text-pink-500"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
+                      <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
+                        {service}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+             
+              <div className="flex-1">
+                <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[450px] rounded-2xl overflow-hidden shadow-lg">
+                  <Image
+                    src={activeSlide.image}
+                    alt={activeSlide.alt}
+                    fill
+                    className={`object-cover transition-all duration-500 ${
+                      isTransitioning ? 'scale-110 opacity-70' : 'scale-100 opacity-100'
+                    }`}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-16">
-          <div className="flex-1 flex flex-col gap-4 md:gap-6">
-            <p className="text-sm sm:text-base md:text-lg text-black leading-relaxed">
-              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-            </p>
-            <p className="text-sm sm:text-base md:text-lg text-black leading-relaxed">
-              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-            </p>
-            <div className="flex flex-col gap-3 mt-4">
-              <p className="text-sm sm:text-base md:text-lg font-bold text-black">keyword research</p>
-              <p className="text-sm sm:text-base md:text-lg font-bold text-black">on-page and off-page optimization</p>
-              <p className="text-sm sm:text-base md:text-lg font-bold text-black">SEO audits</p>
-            </div>
-          </div>
-          <div className="flex-1">
-            <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[450px] rounded-2xl overflow-hidden">
-              <Image
-                src="/img1.avif"
-                alt="SEO Optimization"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
+        
+        <div className="flex justify-center items-center gap-2 mb-8">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === currentSlide
+                  ? 'w-8 bg-pink-500'
+                  : 'w-2 bg-gray-300 hover:bg-gray-400'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-12 md:gap-16 mb-12 md:mb-16">
@@ -250,4 +482,4 @@ const page = () => {
   )
 }
 
-export default page
+export default OurServicePage
