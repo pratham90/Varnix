@@ -7,90 +7,47 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MdArrowOutward } from 'react-icons/md'
 import PageLabel from '@/components/PageLabel'
+import { blogPosts } from '@/data/blogData'
 
 const page = () => {
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Why Social Presence Matters for Sports Teams and Athletes",
-      description: "Before fans cheer for your jersey number, they follow your stories. In today’s world, a powerful game isn’t enough, a powerful presence is. Introduction: Whether you’re a young athlete chasing…",
-      image: "/img1.avif",
-      featured: true
-    },
-    {
-      id: 2,
-      title: "Why AI is the Smartest Partner for Your Marketing Success Today",
-      description: " a world where every scroll, click, and swipe counts, businesses no longer compete on creativity alone, they compete on speed, precision, and adaptability. That’s where AI steps in. Introduction: …",
-      image: "",
-      featured: false
-    },
-    {
-        id: 3,
-        title: "How to Prep for a Successful Marketing Campaign",
-        description: "If you’re thinking about running a marketing campaign, don’t just dive in plan smart. Whether you want to promote a new product, boost your brand presence, or get more people…",
-        image: "",
-        featured: false
-      },
-    {
-      id: 4,
-      title: "How Digital Marketing Helps Your Business Grow Rapidly in Today’s Digital World",
-      description: "In a world that’s always online, the way we do business has changed and changed fast. From startups to legacy brands, businesses today aren’t just relying on word of mouth…",
-      image: "",
-      featured: false
-    },
-    {
-      id: 5,
-      title: "The Power of Consistent Branding in a Noisy World",
-      description: "",
-      image: "",
-      featured: false
-    },
-    {
-      id: 6,
-      title: "How Digital Marketing Helps Your Business Grow Rapidly in Today’s Digital World",
-      description: "In a world that’s always online, the way we do business has changed and changed fast. From startups to legacy brands, businesses today aren’t just relying on word of mouth…",
-      image: "/img1.avif",
-      featured: false
-    },
-    {
-      id: 7,
-      title: "How Digital Marketing Helps Your Business Grow Rapidly in Today’s Digital World",
-      description: "In a world that’s always online, the way we do business has changed and changed fast. From startups to legacy brands, businesses today aren’t just relying on word of mouth…",
-      image: "/img1.avif",
-      featured: false
-    }
-  ]
 
   const featuredPost = blogPosts.find(post => post.featured)
-  const articleList = blogPosts.filter(post => !post.featured && !post.image)
-  const gridPosts = blogPosts.filter(post => !post.featured && post.image)
+  const nonFeaturedPosts = blogPosts.filter(post => !post.featured)
+  // Show first 4 non-featured posts in the article list, rest in grid
+  const articleList = nonFeaturedPosts.slice(0, 4)
+  const gridPosts = nonFeaturedPosts.slice(4)
 
   return (
-    <main className="w-full min-h-screen flex flex-col justify-start items-center gap-5 sm:gap-8 md:gap-8 bg-white overflow-x-hidden">
+    <main className="w-full min-h-screen flex flex-col justify-start items-center bg-white overflow-x-hidden">
       <Navbar />
-      <PageLabel title="*our blogs." />
-      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-6 sm:mt-8 md:mt-10 animate-fade-in-up">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-8">
-          <div className="flex flex-col gap-3 md:gap-4">
-            <h1 className="text-gray-300 italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light">blogs</h1>
-            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-md">
+      <div className="w-full [&>div]:my-2! [&>div]:sm:my-3! [&>div]:md:my-4!">
+        <PageLabel title="*our blogs." />
+      </div>
+      
+      {/* Header Section */}
+      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-2 sm:mt-3 md:mt-4 animate-fade-in-up">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-3 sm:gap-4 md:gap-6">
+          <div className="flex flex-col gap-1 sm:gap-2 w-full md:w-auto">
+            <h1 className="text-gray-300 italic text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light">blogs</h1>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 max-w-md">
               lorem ipsum dolor sit amet, consectetur adipiscing elit, nulla ornare eget felis.
             </p>
           </div>
-          <div className="flex flex-col items-start md:items-end">
-            <p className="text-gray-300 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light">fresh</p>
-            <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black">insights.</p>
+          <div className="flex flex-col items-start md:items-end w-full md:w-auto">
+            <p className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light">fresh</p>
+            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black">insights.</p>
           </div>
         </div>
-        <div className="bg-gray-300 w-full h-px mt-8"></div>
+        <div className="bg-gray-300 w-full h-px mt-4 sm:mt-5 md:mt-6"></div>
       </section>
 
-      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-8 sm:mt-10 md:mt-12 animate-slide-in-right">
-        <div className="flex flex-col lg:flex-row gap-8 md:gap-10 lg:gap-12">
+      {/* Featured Post and Article List Section */}
+      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-6 sm:mt-8 md:mt-10 lg:mt-12 animate-slide-in-right">
+        <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 md:gap-12 lg:gap-16">
           {featuredPost && (
-            <div className="flex-1 lg:flex-[1.2]">
-              <Link href="/detailed-blog" className="group">
-                <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[450px] rounded-2xl overflow-hidden mb-4">
+            <div className="flex-1 lg:flex-[1.2] w-full">
+              <Link href={`/blog/${featuredPost.slug}`} className="group block">
+                <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[450px] rounded-2xl overflow-hidden mb-4 sm:mb-5">
                   <Image
                     src={featuredPost.image}
                     alt={featuredPost.title}
@@ -98,20 +55,22 @@ const page = () => {
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-3 group-hover:text-pink-600 transition-colors">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-3 sm:mb-4 group-hover:text-pink-600 transition-colors">
                   {featuredPost.title}
                 </h2>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4">
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-5 leading-relaxed">
                   {featuredPost.description}
                 </p>
-                <MdArrowOutward className="text-pink-600 text-2xl sm:text-3xl md:text-4xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <div className="flex justify-start">
+                  <MdArrowOutward className="text-pink-600 text-2xl sm:text-3xl md:text-4xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </div>
               </Link>
             </div>
           )}
-          <div className="flex-1 lg:flex-[0.8] flex flex-col gap-8">
+          <div className="flex-1 lg:flex-[0.8] flex flex-col w-full">
             {articleList.map((article, index) => (
-              <div key={article.id}>
-                <Link href="/detailed-blog" className="group block py-4">
+              <div key={article.id} className="w-full">
+                <Link href={`/blog/${article.slug}`} className="group block py-4 sm:py-5">
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-black group-hover:text-pink-600 transition-colors flex-1">
                       {article.title}
@@ -128,11 +87,12 @@ const page = () => {
         </div>
       </section>
 
-      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-8 sm:mt-10 md:mt-12 mb-5 sm:mb-6 md:mb-8 animate-fade-in-up">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
+      {/* Grid Posts Section */}
+      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-8 sm:mt-10 md:mt-12 lg:mt-16 mb-4 sm:mb-5 md:mb-6 lg:mb-8 animate-fade-in-up">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
           {gridPosts.map((post) => (
-            <Link key={post.id} href="/detailed-blog" className="group">
-              <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden mb-4">
+            <Link key={post.id} href={`/blog/${post.slug}`} className="group block">
+              <div className="relative w-full h-56 sm:h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden mb-4 sm:mb-5">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -140,13 +100,15 @@ const page = () => {
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-3 group-hover:text-pink-600 transition-colors">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-3 sm:mb-4 group-hover:text-pink-600 transition-colors">
                 {post.title}
               </h2>
-              <p className="text-sm sm:text-base text-gray-600 mb-4">
+              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-5 leading-relaxed">
                 {post.description}
               </p>
-              <MdArrowOutward className="text-pink-600 text-2xl sm:text-3xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <div className="flex justify-start">
+                <MdArrowOutward className="text-pink-600 text-2xl sm:text-3xl md:text-4xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </div>
             </Link>
           ))}
         </div>

@@ -15,7 +15,7 @@ const Aboutus = () => {
 
   return (
     <section
-      className={`bg-[#1E1E1E] text-white flex flex-col items-center rounded-2xl sm:rounded-3xl w-full min-h-[50vh] pb-8 px-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+      className={`bg-[#1E1E1E] text-white flex flex-col items-center rounded-2xl gap-7  sm:rounded-3xl w-full min-h-[45vh]  px-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
       aria-label="About Us"
     >
       {/* STATS BAR */}
@@ -35,7 +35,7 @@ const Aboutus = () => {
       </div>
 
       {/* CONTENT WRAPPER */}
-      <div className="w-full max-w-[1200px] flex flex-col md:flex-row items-center gap-8 md:gap-16 py-10 px-4 sm:px-6 mt-6">
+      <div className="w-full max-w-[1200px]  flex flex-col md:flex-row items-center gap-8 md:gap-16 py-10 px-4 sm:px-6 mt-6">
         
         {/* LEFT */}
         <div className="flex-1 flex flex-col gap-4 items-start w-full">

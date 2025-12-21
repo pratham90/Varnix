@@ -44,7 +44,7 @@ export default function Home() {
     <main className="flex flex-col min-h-screen bg-white font-sans text-black overflow-x-hidden">
       <Navbar />
       <section
-        className="flex flex-col items-center justify-start min-h-[50vh] sm:h-[60vh] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl py-10 sm:py-14 md:py-16 font-bold gap-3 sm:gap-4 px-4 animate-fade-in-up"
+        className="flex flex-col items-center justify-start  tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl py-20 sm:py-14 md:py-16 font-bold gap-3 sm:gap-4 px-4 animate-fade-in-up"
         aria-label="Hero"
       >
         <h1 className="text-gray-300 text-center">Professional Personal</h1>

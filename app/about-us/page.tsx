@@ -256,7 +256,7 @@ integrity.
             </h2>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-8 md:gap-12 lg:gap-16 justify-center items-start">
+          <div className="flex flex-col sm:flex-row gap-8 md:gap-12 lg:gap-16 justify-center items-center">
             <div className="flex flex-col items-center group transition-all duration-500 delay-300 hover:scale-105">
               <div className="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden bg-gray-700 mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-300">
                 <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800 group-hover:from-gray-500 group-hover:to-gray-700 transition-all duration-300"></div>

@@ -1,3 +1,4 @@
+
 'use client'
 import React, { useEffect } from "react";
 import Link from "next/link";
@@ -6,7 +7,16 @@ import Image from "next/image";
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
-
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+    // Clean up on unmount
+    return () => document.body.classList.remove('overflow-hidden');
+  }, [open]);
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -28,10 +38,9 @@ const Navbar = () => {
       >
         {/* CONTAINER FIX */}
         <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            
-            {/* Logo */}
-            <Link href="/" className="font-bold text-xl text-black hover:text-pink-500 transition-colors duration-300">
+          <div className="flex items-center justify-between h-16 md:h-20 w-full">
+            {/* Logo always left */}
+            <Link href="/" className="font-bold text-xl text-black hover:text-pink-500 transition-colors duration-300 flex-shrink-0">
               <Image
                 src="/VARNIX.png"
                 alt="Varnix Logo"
@@ -44,6 +53,7 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-5 lg:gap-7 xl:gap-8">
+              {/* ...existing code... */}
               {[
                 { name: "Home", href: "/" },
                 { name: "About", href: "/about-us" },
@@ -70,11 +80,11 @@ const Navbar = () => {
               Contact Us
             </Link>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button always right */}
             <button
-              className="md:hidden relative w-10 h-10 flex items-center justify-center focus:outline-none z-50"
+              className="md:hidden ml-auto relative w-10 h-10 flex items-center justify-center focus:outline-none z-50"
               onClick={toggleMenu}
-              aria-label="Toggle menu"
+              aria-label="Open menu"
             >
               <div className="relative w-6 h-6">
                 <span className={`absolute left-0 w-6 h-0.5 bg-black transition-all duration-300 ${open ? 'rotate-45 top-2.5' : 'top-0'}`} />
@@ -85,42 +95,66 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Overlay */}
+        {/* Mobile Overlay (full screen) */}
         <div
-          className={`md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 z-40 ${
+          className={`md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 z-40 ${
             open ? 'opacity-100 visible' : 'opacity-0 invisible'
           }`}
           onClick={closeMenu}
         />
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu (full screen overlay) */}
         <div
-          className={`md:hidden fixed top-16 inset-x-0 bg-white shadow-2xl z-40 transition-transform duration-300 ease-out ${
-            open ? 'translate-y-0' : '-translate-y-full'
+          className={`md:hidden fixed inset-x-2 top-3 bottom-3 bg-white z-50 flex flex-col rounded-2xl shadow-2xl border border-gray-200 transition-transform duration-300 ease-out ${
+            open ? 'translate-y-0 opacity-100' : '-translate-y-8 opacity-0 pointer-events-none'
           }`}
+          style={{ maxHeight: '94vh' }}
         >
-          <div className="px-6 py-8 space-y-6">
+          <div className="flex items-center justify-between h-14 px-4 border-b border-gray-100 rounded-t-2xl bg-white/90">
+            {/* Logo left in menu */}
+            <Link href="/" className="flex-shrink-0" onClick={closeMenu}>
+              <Image
+                src="/VARNIX.png"
+                alt="Varnix Logo"
+                width={95}
+                height={32}
+                className="h-7 w-auto"
+                priority
+              />
+            </Link>
+            {/* Close button right */}
+            <button
+              className="w-9 h-9 flex items-center justify-center focus:outline-none relative"
+              onClick={closeMenu}
+              aria-label="Close menu"
+            >
+              <span className="block w-6 h-0.5 bg-black rotate-45 absolute"></span>
+              <span className="block w-6 h-0.5 bg-black -rotate-45 absolute"></span>
+              <span className="sr-only">Close</span>
+            </button>
+          </div>
+          <div className="flex-1 flex flex-col justify-center items-center space-y-4 px-4 py-4 overflow-y-auto">
             {[
               { name: "Home", href: "/" },
               { name: "About", href: "/about-us" },
               { name: "Our Services", href: "/our-service" },
               { name: "Our Works", href: "/our-works" },
               { name: "Blogs", href: "/blog" },
-            ].map((item) => (
+            ].map((item, idx) => (
               <Link
                 key={item.name}
                 href={item.href}
                 onClick={closeMenu}
-                className="block text-lg font-medium text-black hover:text-pink-500 transition-colors duration-300 py-2 border-b border-gray-100"
+                className="block text-xl font-semibold text-black hover:text-pink-500 transition-colors duration-300 text-center tracking-wide"
+                style={{ letterSpacing: '0.01em' }}
               >
                 {item.name}
               </Link>
             ))}
-
             <Link
               href="/contact-us"
               onClick={closeMenu}
-              className="block w-full bg-pink-500 text-white text-center py-3 rounded-full font-medium hover:bg-pink-600 transition-colors duration-300 mt-4"
+              className="block w-full max-w-xs bg-pink-500 text-white text-center py-2.5 rounded-full font-medium hover:bg-pink-600 transition-colors duration-300 mt-2 text-base shadow-md"
             >
               Contact Us
             </Link>
