@@ -168,7 +168,7 @@ const OurServicePage = () => {
         <Navbar />
         <PageLabel title="our services"/>
       <section className="w-full mt-10 sm:mt-12 md:mt-16">
-        <div className="w-full max-w-full mx-auto px-30 bg-gray-50">
+        <div className="w-full max-w-full mx-auto px-20 bg-gray-50">
           <div className="relative mb-12 md:mb-16 min-h-[500px]  sm:min-h-[600px] md:min-h-[700px] lg:min-h-[750px] overflow-hidden">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-6 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
               <h1 
