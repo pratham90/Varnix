@@ -6,22 +6,13 @@ import Image from "next/image";
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
-  const [isVisible, setIsVisible] = React.useState(false);
 
   useEffect(() => {
-    // Trigger navbar animation immediately on mount (first to appear)
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 50);
-    
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleMenu = () => setOpen(!open);
@@ -32,7 +23,7 @@ const Navbar = () => {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
           scrolled ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-white'
-        } ${isVisible ? 'slide-down-visible' : 'slide-down-hidden'}`}
+        }`}
         aria-label="Main Navigation"
       >
         {/* CONTAINER FIX */}
@@ -40,7 +31,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16 md:h-20">
             
             {/* Logo */}
-            <Link href="/" className={`font-bold text-xl text-black hover:text-pink-500 transition-colors duration-300 ${isVisible ? 'slide-down-visible' : 'slide-down-hidden'}`} style={{ transitionDelay: '0.1s' }}>
+            <Link href="/" className="font-bold text-xl text-black hover:text-pink-500 transition-colors duration-300">
               <Image
                 src="/VARNIX.png"
                 alt="Varnix Logo"
@@ -59,12 +50,11 @@ const Navbar = () => {
                 { name: "Our Services", href: "/our-service" },
                 { name: "Our Works", href: "/our-works" },
                 { name: "Blogs", href: "/blog" },
-              ].map((item, index) => (
+              ].map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-base lg:text-lg text-black hover:text-pink-500 transition-colors duration-300 relative group ${isVisible ? 'slide-down-visible' : 'slide-down-hidden'}`}
-                  style={{ transitionDelay: `${0.2 + index * 0.05}s` }}
+                  className="text-base lg:text-lg text-black hover:text-pink-500 transition-colors duration-300 relative group"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-500 transition-all duration-300 group-hover:w-full"></span>
@@ -75,16 +65,14 @@ const Navbar = () => {
             {/* Desktop Contact Button */}
             <Link
               href="/contact-us"
-              className={`hidden md:block bg-pink-500 px-5 py-2 text-white rounded-full text-sm lg:text-base hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg ${isVisible ? 'slide-down-visible' : 'slide-down-hidden'}`}
-              style={{ transitionDelay: '0.5s' }}
+              className="hidden md:block bg-pink-500 px-5 py-2 text-white rounded-full text-sm lg:text-base hover:bg-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               Contact Us
             </Link>
 
             {/* Mobile Menu Button */}
             <button
-              className={`md:hidden relative w-10 h-10 flex items-center justify-center focus:outline-none z-50 ${isVisible ? 'slide-down-visible' : 'slide-down-hidden'}`}
-              style={{ transitionDelay: '0.2s' }}
+              className="md:hidden relative w-10 h-10 flex items-center justify-center focus:outline-none z-50"
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >

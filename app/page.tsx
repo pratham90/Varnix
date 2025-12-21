@@ -11,15 +11,9 @@ import Image from "next/image";
 
 export default function Home() {
   const [visibleItems, setVisibleItems] = useState<{ [key: string]: boolean }>({});
-  const [heroVisible, setHeroVisible] = useState(false);
-  const itemRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+  const itemRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   useEffect(() => {
-    // Trigger hero animation immediately after navbar (with delay)
-    const heroTimer = setTimeout(() => {
-      setHeroVisible(true);
-    }, 300); // Start after navbar animation
-
     const observers: IntersectionObserver[] = [];
 
     Object.keys(itemRefs.current).forEach((key) => {
@@ -39,28 +33,23 @@ export default function Home() {
     });
 
     return () => {
-      clearTimeout(heroTimer);
       observers.forEach((observer) => observer.disconnect());
     };
   }, []);
 
-  const setItemRef = (key: string) => (el: HTMLElement | null) => {
+  const setItemRef = (key: string) => (el: HTMLDivElement | null) => {
     itemRefs.current[key] = el;
   };
   return (
     <main className="flex flex-col min-h-screen bg-white font-sans text-black overflow-x-hidden">
       <Navbar />
       <section
-        className="flex flex-col items-center justify-start min-h-[50vh] sm:h-[60vh] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl py-10 sm:py-14 md:py-16 font-bold gap-3 sm:gap-4 px-4"
+        className="flex flex-col items-center justify-start min-h-[50vh] sm:h-[60vh] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl py-10 sm:py-14 md:py-16 font-bold gap-3 sm:gap-4 px-4 animate-fade-in-up"
         aria-label="Hero"
       >
-        <h1 className={`text-gray-300 text-center ${heroVisible ? "slide-up-visible" : "slide-up-hidden"}`}>
-          Professional Personal
-        </h1>
-        <h1 className={`text-gray-950 text-center ${heroVisible ? "slide-up-visible" : "slide-up-hidden"}`} style={{ transitionDelay: '0.15s' }}>
-          Digital Marketing
-        </h1>
-        <button className={`bg-pink-500 px-5 sm:px-6 md:px-8 py-2.5 md:py-3 text-white text-sm sm:text-base md:text-lg tracking-normal mt-6 sm:mt-8 md:mt-10 rounded-2xl cursor-pointer inline-block mx-auto hover:bg-pink-600 hover:shadow-lg hover:scale-105 transition-transform transition-colors duration-300 ${heroVisible ? "slide-up-visible" : "slide-up-hidden"}`} style={{ transitionDelay: '0.3s' }}>
+        <h1 className="text-gray-300 text-center">Professional Personal</h1>
+        <h1 className="text-gray-950 text-center">Digital Marketing</h1>
+        <button className="bg-pink-500 px-5 sm:px-6 md:px-8 py-2.5 md:py-3 text-white text-sm sm:text-base md:text-lg tracking-normal mt-6 sm:mt-8 md:mt-10 rounded-2xl cursor-pointer inline-block mx-auto hover:bg-pink-600 hover:shadow-lg hover:scale-105 transition-transform transition-colors duration-300">
           Explore Now
         </button>
       </section>

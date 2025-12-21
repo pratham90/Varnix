@@ -124,27 +124,3 @@ html {
   transform: translateX(0);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
-/* Slide up from bottom animation */
-.slide-up-hidden {
-  opacity: 0;
-  transform: translateY(50px);
-}
-
-.slide-up-visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-/* Slide down from top animation */
-.slide-down-hidden {
-  opacity: 0;
-  transform: translateY(-50px);
-}
-
-.slide-down-visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}

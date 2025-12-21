@@ -141,7 +141,7 @@ const OurServicePage = () => {
     setDirection('left')
     setIsTransitioning(true)
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-    setTimeout(() => setIsTransitioning(false), 500)
+    setTimeout(() => setIsTransitioning(false), 600)
   }
 
   const handleNext = () => {
@@ -149,7 +149,7 @@ const OurServicePage = () => {
     setDirection('right')
     setIsTransitioning(true)
     setCurrentSlide((prev) => (prev + 1) % slides.length)
-    setTimeout(() => setIsTransitioning(false), 500)
+    setTimeout(() => setIsTransitioning(false), 600)
   }
 
   const goToSlide = (index: number) => {
@@ -157,7 +157,7 @@ const OurServicePage = () => {
     setDirection(index > currentSlide ? 'right' : 'left')
     setIsTransitioning(true)
     setCurrentSlide(index)
-    setTimeout(() => setIsTransitioning(false), 500)
+    setTimeout(() => setIsTransitioning(false), 600)
   }
 
   const activeSlide = slides[currentSlide]
@@ -167,214 +167,225 @@ const OurServicePage = () => {
      
         <Navbar />
         <PageLabel title="our services"/>
-      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-10 sm:mt-12 md:mt-16">
-        
-
-       
-        <div className="relative mb-12 md:mb-16 min-h-[500px] bg-gray-50 sm:min-h-[600px] md:min-h-[650px] overflow-hidden">
-        <div className="flex  flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-12 gap-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black">
-            Our Services
-          </h1>
-          <div className="flex items-center gap-4 mt-4 md:mt-0">
-            <div className="flex gap-2">
-              <button
-                type="button"
-                onClick={handlePrev}
-                disabled={isTransitioning}
-                className="p-2 hover:bg-gray-100 rounded transition disabled:opacity-50 disabled:cursor-not-allowed"
-                aria-label="Previous service"
+      <section className="w-full mt-10 sm:mt-12 md:mt-16">
+        <div className="w-full max-w-full mx-auto px-30 bg-gray-50">
+          <div className="relative mb-12 md:mb-16 min-h-[500px]  sm:min-h-[600px] md:min-h-[700px] lg:min-h-[750px] overflow-hidden">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-6 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
+              <h1 
+                key={`title-${currentSlide}`}
+                className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black transition-all duration-500 ease-in-out ${
+                  isTransitioning
+                    ? direction === 'right'
+                      ? 'opacity-0 translate-x-4'
+                      : 'opacity-0 -translate-x-4'
+                    : 'opacity-100 translate-x-0'
+                }`}
               >
-                <BsArrowLeft className="text-xl sm:text-2xl text-black" />
-              </button>
-              <button
-                type="button"
-                onClick={handleNext}
-                disabled={isTransitioning}
-                className="p-2 hover:bg-gray-100 rounded transition disabled:opacity-50 disabled:cursor-not-allowed"
-                aria-label="Next service"
-              >
-                <BsArrowRight className="text-xl sm:text-2xl text-black" />
-              </button>
-            </div>
-           <Link href="/contact-us"> <button className="bg-pink-500 text-white px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base md:text-lg rounded-lg hover:bg-pink-600 transition">
-              Contact Us
-            </button>
-            </Link>
-          </div>
-        </div>
-          <div
-            key={currentSlide}
-            className={`w-full bg-gray-50 rounded-2xl sm:rounded-3xl  p-6 sm:p-8 md:p-10 lg:p-12 transition-all duration-100 ease-in-out ${
-              isTransitioning
-                ? direction === 'right'
-                  ? 'opacity-0 scale-95 translate-x-8'
-                  : 'opacity-0 scale-95 -translate-x-8'
-                : 'opacity-100 scale-100 translate-x-0'
-            }`}
-          >
-            <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16">
-          
-              <div className="flex-1 flex flex-col gap-6 md:gap-8">
-              
-
-              
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black">
-                  {activeSlide.title}
-                </h2>
-
-               
-                <p className="text-base sm:text-lg md:text-xl text-gray-600 italic">
-                  {activeSlide.tagline}
-                </p>
-
-                
-                <div className="flex flex-col gap-3 sm:gap-4 mt-2">
-                  {activeSlide.services.map((service, index) => (
-                    <div
-                      key={index}
-                      className="flex items-start gap-3"
-                    >
-                      <div className="mt-1.5 shrink-0">
-                        <svg
-                          className="w-5 h-5 sm:w-6 sm:h-6 text-pink-500"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      </div>
-                      <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
-                        {service}
-                      </p>
-                    </div>
-                  ))}
+                {activeSlide.title}
+              </h1>
+              <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
+                <div className="flex gap-2">
+                  <button
+                    type="button"
+                    onClick={handlePrev}
+                    disabled={isTransitioning}
+                    className="p-2 sm:p-2.5 hover:bg-gray-200 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+                    aria-label="Previous service"
+                  >
+                    <BsArrowLeft className="text-lg sm:text-xl md:text-2xl text-black" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleNext}
+                    disabled={isTransitioning}
+                    className="p-2 sm:p-2.5 hover:bg-gray-200 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+                    aria-label="Next service"
+                  >
+                    <BsArrowRight className="text-lg sm:text-xl md:text-2xl text-black" />
+                  </button>
                 </div>
-              </div>
-
-             
-              <div className="flex-1">
-                <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[450px] rounded-2xl overflow-hidden shadow-lg">
-                  <Image
-                    src={activeSlide.image}
-                    alt={activeSlide.alt}
-                    fill
-                    className={`object-cover transition-all duration-500 ${
-                      isTransitioning ? 'scale-110 opacity-70' : 'scale-100 opacity-100'
-                    }`}
-                  />
-                </div>
+                <Link href="/contact-us" className="inline-block">
+                  <button className="bg-pink-500 text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base rounded-lg hover:bg-pink-600 transition-all active:scale-95 shadow-md hover:shadow-lg">
+                    Contact Us
+                  </button>
+                </Link>
               </div>
             </div>
-          </div>
-        </div>
-
-        
-        <div className="flex justify-center items-center gap-2 mb-8">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? 'w-8 bg-pink-500'
-                  : 'w-2 bg-gray-300 hover:bg-gray-400'
+            <div
+              key={currentSlide}
+              className={`w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pb-6 sm:pb-8 md:pb-10 transition-all duration-500 ease-in-out ${
+                isTransitioning
+                  ? direction === 'right'
+                    ? 'opacity-0 translate-x-8'
+                    : 'opacity-0 -translate-x-8'
+                  : 'opacity-100 translate-x-0'
               }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
+            >
+              <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
+                <div className="flex-1 flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+                  <p 
+                    key={`tagline-${currentSlide}`}
+                    className={`text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 italic transition-all duration-500 ease-in-out ${
+                      isTransitioning ? 'opacity-0' : 'opacity-100'
+                    }`}
+                  >
+                    {activeSlide.tagline}
+                  </p>
+                  <div className="flex flex-col gap-2 sm:gap-3 md:gap-4 mt-2">
+                    {activeSlide.services.map((service, index) => (
+                      <div
+                        key={`${currentSlide}-${index}`}
+                        className={`flex items-start gap-3 transition-all duration-500 ease-in-out ${
+                          isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
+                        }`}
+                        style={{ transitionDelay: `${index * 50}ms` }}
+                      >
+                        <div className="mt-1 sm:mt-1.5 shrink-0">
+                          <svg
+                            className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-pink-500"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2.5}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        </div>
+                        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
+                          {service}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="relative w-full h-56 sm:h-64 md:h-80 lg:h-96 xl:h-[450px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
+                    <Image
+                      key={`img-${currentSlide}`}
+                      src={activeSlide.image}
+                      alt={activeSlide.alt}
+                      fill
+                      className={`object-cover transition-all duration-500 ease-in-out ${
+                        isTransitioning ? 'scale-110 opacity-50 blur-sm' : 'scale-100 opacity-100 blur-0'
+                      }`}
+                      priority={currentSlide === 0}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Percentage metrics - before pagination dots */}
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 mb-6 sm:mb-8">
+              <div className="flex flex-col items-center gap-2 sm:gap-3">
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40">
+                  <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      fill="none"
+                      stroke="#e5e7eb"
+                      strokeWidth="8"
+                    />
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      fill="none"
+                      stroke="#ec4899"
+                      strokeWidth="8"
+                      strokeDasharray="254.47 282.74"
+                      strokeLinecap="round"
+                      className="transition-all duration-500"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">90%</span>
+                  </div>
+                </div>
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg text-black text-center font-medium">top search result.</p>
+              </div>
+              <div className="flex flex-col items-center gap-2 sm:gap-3">
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40">
+                  <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      fill="none"
+                      stroke="#e5e7eb"
+                      strokeWidth="8"
+                    />
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      fill="none"
+                      stroke="#ec4899"
+                      strokeWidth="8"
+                      strokeDasharray="246.98 282.74"
+                      strokeLinecap="round"
+                      className="transition-all duration-500"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">87%</span>
+                  </div>
+                </div>
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg text-black text-center font-medium">active SEO projects.</p>
+              </div>
+              <div className="flex flex-col items-center gap-2 sm:gap-3">
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40">
+                  <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      fill="none"
+                      stroke="#e5e7eb"
+                      strokeWidth="8"
+                    />
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      fill="none"
+                      stroke="#ec4899"
+                      strokeWidth="8"
+                      strokeDasharray="268.60 282.74"
+                      strokeLinecap="round"
+                      className="transition-all duration-500"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">95%</span>
+                  </div>
+                </div>
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg text-black text-center font-medium">clients satisfaction.</p>
+              </div>
+            </div>
 
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-12 md:gap-16 mb-12 md:mb-16">
-          <div className="flex flex-col items-center gap-3">
-            <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48">
-              <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  fill="none"
-                  stroke="#e5e7eb"
-                  strokeWidth="8"
+            {/* Pagination dots */}
+            <div className="flex justify-center items-center gap-2 mb-6 sm:mb-8 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  disabled={isTransitioning}
+                  className={`h-2 rounded-full transition-all duration-300 disabled:cursor-not-allowed ${
+                    index === currentSlide
+                      ? 'w-8 bg-pink-500 shadow-md'
+                      : 'w-2 bg-gray-300 hover:bg-gray-400 hover:w-3'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
                 />
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  fill="none"
-                  stroke="#ec4899"
-                  strokeWidth="8"
-                  strokeDasharray="254.47 282.74"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">90%</span>
-              </div>
+              ))}
             </div>
-            <p className="text-sm sm:text-base md:text-lg text-black text-center">top search result.</p>
-          </div>
-          <div className="flex flex-col items-center gap-3">
-            <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48">
-              <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  fill="none"
-                  stroke="#e5e7eb"
-                  strokeWidth="8"
-                />
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  fill="none"
-                  stroke="#ec4899"
-                  strokeWidth="8"
-                  strokeDasharray="246.98 282.74"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">87%</span>
-              </div>
-            </div>
-            <p className="text-sm sm:text-base md:text-lg text-black text-center">active SEO projects.</p>
-          </div>
-          <div className="flex flex-col items-center gap-3">
-            <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48">
-              <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  fill="none"
-                  stroke="#e5e7eb"
-                  strokeWidth="8"
-                />
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  fill="none"
-                  stroke="#ec4899"
-                  strokeWidth="8"
-                  strokeDasharray="268.60 282.74"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">95%</span>
-              </div>
-            </div>
-            <p className="text-sm sm:text-base md:text-lg text-black text-center">clients satisfaction.</p>
           </div>
         </div>
       </section>
