@@ -22,7 +22,7 @@ const OurClients = () => {
             "/MATHURA-LOGO.png",
             "/Muradabad-Logo.png",
             "/Neo-mall-logo.png",
-            "/Adrak-ilaichi-logo.png",
+            "/UPVL-Logo2.png",
             "/Ayodhya-Logo.png",
             "/IWKL.png",
             "/Noida-Logo.png",
