@@ -66,22 +66,10 @@ const Page = () => {
 
             <div className="flex-1 space-y-4 md:space-y-6">
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-black leading-relaxed transition-all duration-700 delay-300">
-                Varnix is not just a media and marketing agency—we are a
-                collective of strategists, creators, technologists, and
-                storytellers dedicated to elevating brands into cultural forces.
-                In an age where attention is the most valuable currency, we help
-                brands win it, retain it, and monetize it. Our full-spectrum
-                services—ranging from brand building to viral content creation,
-                growth marketing to PR, and digital transformation to AI-powered
-                storytelling—are designed to solve one core challenge: How do we
-                make you unforgettable?
+              Varnix is more than a media and marketing agency—we’re a collective of strategists, creators, technologists, and storytellers turning brands into cultural forces. In today’s attention-driven world, we help brands capture interest, sustain relevance, and convert attention into measurable growth. From brand building and viral content to performance marketing, PR, digital transformation, and AI-powered storytelling, everything we do serves one goal: making your brand unforgettable.
               </p>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-black leading-relaxed transition-all duration-700 delay-400">
-                At Varnix, we believe marketing is not
-                about selling a product. It’s about creating experiences,
-                building communities, and driving emotions that lead to action.
-                We’re not just your agency. We’re your extended creative &
-                growth team.
+              We believe marketing isn’t about selling products—it’s about creating experiences, building communities, and inspiring action. We’re not just your agency; we’re your extended creative and growth team.
               </p>
             </div>
           </div>
@@ -99,7 +87,7 @@ const Page = () => {
       >
         <div className="max-w-7xl mx-auto relative h-full">
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-start mb-12 md:mb-20 lg:mb-32">
-            <div className="shrink-0 md:w-2/5">
+            <div ref={setRef("mission-heading")} className={`shrink-0 md:w-2/5 ${isVisible["mission-heading"] ? "slide-in-left-visible" : "slide-in-left-hidden"}`}>
               <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
                 <span className="text-gray-400 block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-1 transition-all duration-700 delay-100">
                   Our
@@ -115,7 +103,7 @@ const Page = () => {
               </h2>
             </div>
 
-            <div className="flex-1 space-y-5 md:space-y-6 pt-2">
+            <div ref={setRef("mission-desc")} className={`flex-1 space-y-5 md:space-y-6 pt-2 ${isVisible["mission-desc"] ? "slide-in-right-visible" : "slide-in-right-hidden"}`} style={{ transitionDelay: '0.1s' }}>
               <p className="text-base sm:text-lg md:text-xl text-black leading-relaxed transition-all duration-700 delay-300">
                 Our mission is to build intelligent, imaginative, and impactful marketing ecosystems that empower
 brands to communicate with authenticity and purpose. We help businesses scale fearlessly by
@@ -127,7 +115,7 @@ digital world.
           </div>
 
           <div className="flex   gap-8 md:gap-12 lg:gap-16 items-start mb-12 md:mb-20 lg:mb-32">
-            <div className="flex-1 space-y-5 md:space-y-6 pt-2">
+            <div ref={setRef("vision-desc")} className={`flex-1 space-y-5 md:space-y-6 pt-2 ${isVisible["vision-desc"] ? "slide-in-left-visible" : "slide-in-left-hidden"}`}>
               <p className="text-base sm:text-lg md:text-xl text-black leading-relaxed transition-all duration-700 delay-300">
                We envision becoming a globally recognized creative force that transforms ideas into movements and
 campaigns into lasting conversations. By pushing boundaries and embracing innovation, we aim to turn
@@ -135,7 +123,7 @@ brands into cultural symbols that leave a lasting legacy across industries and m
               </p>
             
             </div>
-            <div className="shrink-0 md:w-2/5">
+            <div ref={setRef("vision-heading")} className={`shrink-0 md:w-2/5 ${isVisible["vision-heading"] ? "slide-in-right-visible" : "slide-in-right-hidden"}`} style={{ transitionDelay: '0.1s' }}>
               <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
                 <span className="text-gray-400 block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-1 transition-all duration-700 delay-100">
                   Our
@@ -152,7 +140,7 @@ brands into cultural symbols that leave a lasting legacy across industries and m
             </div>
           </div>
           <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-12 lg:gap-16 items-start mb-12 md:mb-20 lg:mb-32">
-            <div className="flex-1 space-y-5 md:space-y-6 pt-2">
+            <div ref={setRef("promise-desc")} className={`flex-1 space-y-5 md:space-y-6 pt-2 ${isVisible["promise-desc"] ? "slide-in-right-visible" : "slide-in-right-hidden"}`}>
               <p className="text-base sm:text-lg md:text-xl text-black leading-relaxed transition-all duration-700 delay-300">
               At Varnix, we promise marketing that is never generic and never disconnected. Every solution we create
 is custom-built, insight-driven, and culturally relevant—designed to grow with your brand, adapt to
@@ -160,7 +148,7 @@ change, and deliver long-term impact.
               </p>
             
             </div>
-            <div className="shrink-0 md:w-2/5">
+            <div ref={setRef("promise-heading")} className={`shrink-0 md:w-2/5 ${isVisible["promise-heading"] ? "slide-in-left-visible" : "slide-in-left-hidden"}`} style={{ transitionDelay: '0.1s' }}>
               <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
                 <span className="text-gray-400 block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-1 transition-all duration-700 delay-100">
                   Our

@@ -1,74 +1,50 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 const OurClients = () => {
   return (
-    <div className='bg-[#1E1E1E] flex flex-col justify-start items-center py-6 sm:py-8 md:py-10 mt-6 sm:mt-8 md:mt-10 rounded-2xl sm:rounded-3xl md:rounded-4xl gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6 md:px-8 animate-fade-in-up'>
-        <h1 className='text-pink-600 text-lg sm:text-xl'>Our Clients</h1>
-        <div className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl flex flex-col justify-center items-center tracking-tight text-white text-center px-4'>
-            <p>Old buddies, new pals, and</p>
-            <p>a bunch of companies!</p>
+    <section className="bg-[#1E1E1E] mt-6 sm:mt-8 md:mt-10 rounded-2xl py-10 sm:rounded-3xl animate-fade-in-up">
+      {/* CENTERED CONTAINER */}
+      <div className="mx-auto max-w-[1300px] px-4 py-10 sm:py-10 md:py-12 flex flex-col items-center gap-8 sm:gap-8">
+
+        <p className="text-pink-600 xl:text-2xl sm:text-xl">
+          Our Clients
+        </p>
+
+        <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white text-center tracking-tight">
+          <p>Old buddies, new pals, and</p>
+          <p>a bunch of companies!</p>
         </div>
-        <div className='flex flex-wrap gap-4 sm:gap-6 md:gap-8 lg:gap-10 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-30 justify-center items-center w-full'>
-            <Image
-                src="/Lucknow-lions-logo.png"
+
+        {/* LOGOS GRID */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 w-full place-items-center mt-4">
+          {[
+            "/Lucknow-lions-logo.png",
+            "/MATHURA-LOGO.png",
+            "/Muradabad-Logo.png",
+            "/Neo-mall-logo.png",
+            "/Adrak-ilaichi-logo.png",
+            "/Ayodhya-Logo.png",
+            "/IWKL.png",
+            "/Noida-Logo.png",
+          ].map((src, index) => (
+            <div
+              key={index}
+              className="w-full max-w-[220px] h-[160px] flex items-center justify-center bg-transparent rounded-2xl"
+            >
+              <Image
+                src={src}
                 alt="Clients Logos"
                 width={250}
-                height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
-            />
-            <Image
-                src="/MATHURA-LOGO.png"
-                alt="Clients Logos"
-                width={250}
-                height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
-            />
-            <Image
-                src="/Muradabad-Logo.png"
-                alt="Clients Logos"
-                width={250}
-                height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
-            />
-            <Image
-                src="/Neo-mall-logo.png"
-                alt="Clients Logos"
-                width={250}
-                height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
-            />
-            <Image
-                src="/Adrak-ilaichi-logo.png"
-                alt="Clients Logos"
-                width={250}
-                height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
-            />
-            <Image
-                src="/Ayodhya-Logo.png"
-                alt="Clients Logos"
-                width={250}
-                height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
-            />
-            <Image
-                src="/IWKL.png"
-                alt="Clients Logos"
-                width={250}
-                height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
-            />
-            <Image
-                src="/Noida-Logo.png"
-                alt="Clients Logos"
-                width={250}
-                height={30}
-                className='rounded-xl sm:rounded-2xl w-full sm:w-[45%] md:w-[30%] lg:w-[20%] h-40 sm:h-50 md:h-60 object-cover'
-            />
+                height={150}
+                className="w-full h-full object-contain rounded-xl"
+              />
+            </div>
+          ))}
         </div>
-      
-    </div>
-  )
-}
+
+      </div>
+    </section>
+  );
+};
 
 export default OurClients;
