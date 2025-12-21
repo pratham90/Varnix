@@ -43,7 +43,7 @@ const BlogDetailPage = () => {
       <div className='flex flex-col justify-start gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 my-4 sm:my-6 md:my-8 lg:my-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 text-black max-w-7xl mx-auto w-full animate-fade-in-up'>
         <div className='flex flex-col justify-start items-center gap-2 sm:gap-3 md:gap-4 animate-fade-in-up'>
           {/* <p className='text-gray-300 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-center'>Turning Engagement</p> */}
-          <p className='text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl tracking-wide text-center font-bold'>blog.content.title</p>
+          <p className='text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl tracking-wide text-center font-bold'>blog.title</p>
         </div>
         
         <div className="text-justify flex flex-col justify-start items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 animate-slide-in-right">
