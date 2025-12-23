@@ -1,3 +1,157 @@
+/* Center Mission, Vision, Promise descriptions on mobile only */
+.aboutus-desc-mobile-center {
+  text-align: left;
+}
+@media (max-width: 600px) {
+  .aboutus-desc-mobile-center {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
+}
+/* Center Mission, Vision, Promise sections on mobile only */
+.aboutus-section-mobile-center {
+  align-items: flex-start !important;
+  text-align: left;
+}
+@media (max-width: 600px) {
+  .aboutus-section-mobile-center {
+    align-items: center !important;
+    text-align: center !important;
+    flex-direction: column !important;
+  }
+  .aboutus-section-mobile-center > div,
+  .aboutus-section-mobile-center h2,
+  .aboutus-section-mobile-center p {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+/* Center Aboutus left content and CTA only on mobile */
+/* Center Aboutus left content and CTA only on mobile, with !important to override Tailwind */
+.aboutus-content-mobile-center {
+  align-items: flex-start !important;
+  text-align: left;
+}
+@media (max-width: 600px) {
+  .aboutus-content-mobile-center {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .aboutus-content-mobile-center h2,
+  .aboutus-content-mobile-center p,
+  .aboutus-content-mobile-center button {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+/* Always keep director's note dots horizontal */
+.director-note-dots-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  min-width: 0 !important;
+}
+@media (max-width: 600px) {
+  .director-note-flex-mobile {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  .director-note-flex-mobile > div {
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+}
+/* Center director's note only on mobile */
+.director-note-responsive {
+  text-align: left;
+  align-items: flex-start;
+}
+@media (max-width: 600px) {
+  .director-note-responsive {
+    text-align: center !important;
+    align-items: center !important;
+  }
+  .director-note-responsive > div {
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  .director-note-responsive h2,
+  .director-note-responsive p {
+    text-align: center !important;
+    width: 100% !important;
+  }
+}
+/* Center Contact Us only on mobile */
+.contactus-mobile-center {
+  align-items: flex-start;
+}
+.contactus-mobile-center-text {
+  text-align: left;
+}
+@media (max-width: 600px) {
+  .contactus-mobile-center {
+    align-items: center !important;
+  }
+  .contactus-mobile-center-text {
+    text-align: center !important;
+    width: 100%;
+  }
+}
+/* Responsive center alignment for blog header on mobile */
+.blog-header-responsive {
+  /* Default: no override, keep flex as is for desktop */
+}
+
+@media (max-width: 600px) {
+  .blog-header-responsive > div {
+    align-items: center !important;
+    text-align: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  .blog-header-responsive .flex {
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .blog-header-responsive h1,
+  .blog-header-responsive p {
+    text-align: center !important;
+    width: 100% !important;
+  }
+}
+/* Responsive center alignment for about-us intro on mobile */
+.aboutus-intro-responsive {
+  /* Default: no override, keep flex as is for desktop */
+}
+
+@media (max-width: 600px) {
+  .aboutus-intro-responsive {
+    align-items: center !important;
+    text-align: center;
+  }
+  .aboutus-intro-responsive > div {
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .aboutus-intro-responsive h2,
+  .aboutus-intro-responsive p {
+    text-align: center !important;
+  }
+}
 @import "tailwindcss";
 
 :root {

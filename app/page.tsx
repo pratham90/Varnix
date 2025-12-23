@@ -226,8 +226,8 @@ export default function Home() {
       <div ref={setItemRef("item9-heading")} className={`flex gap-3 text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${visibleItems["item9-heading"] ? "slide-in-left-visible" : "slide-in-left-hidden"}`}>
         <MdArrowOutward className="text-pink-600 shrink-0" />
         <h3 className="font-bold">
-          Talent, Athlete &
-          <p>Team Management</p>
+          Talent, Athlete &<br />
+          Team Management
         </h3>
       </div>
       <div ref={setItemRef("item9-desc")} className={`text-right text-sm sm:text-base md:text-lg space-y-1 ${visibleItems["item9-desc"] ? "slide-in-right-visible" : "slide-in-right-hidden"}`} style={{ transitionDelay: '0.1s' }}>
@@ -263,27 +263,27 @@ export default function Home() {
           </div>
 
           {/* IMAGES – FIXED */}
-          <div className="flex justify-center gap-6 mt-6 sm:mt-10 animate-slide-in-right">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6 sm:mt-10 animate-slide-in-right place-items-center w-full max-w-5xl mx-auto">
             <Image
               src="/img1.avif"
               alt="Brand strategy image"
               width={400}
               height={400}
-              className="w-[280px] sm:w-[300px] aspect-square rounded-2xl object-cover"
+              className="w-full max-w-[320px] aspect-square rounded-2xl object-cover"
             />
             <Image
               src="/img1.avif"
               alt="Brand strategy image"
               width={400}
               height={400}
-              className="w-[280px] sm:w-[300px] aspect-square rounded-2xl object-cover"
+              className="w-full max-w-[320px] aspect-square rounded-2xl object-cover"
             />
             <Image
               src="/img1.avif"
               alt="Brand strategy image"
               width={400}
               height={400}
-              className="w-[280px] sm:w-[300px] aspect-square rounded-2xl object-cover"
+              className="w-full max-w-[320px] aspect-square rounded-2xl object-cover"
             />
           </div>
 

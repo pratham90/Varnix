@@ -25,16 +25,16 @@ const page = () => {
       </div>
       
       {/* Header Section */}
-      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-2 sm:mt-3 md:mt-4 animate-fade-in-up">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-3 sm:gap-4 md:gap-6">
+      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-2 sm:mt-3 md:mt-4 animate-fade-in-up blog-header-responsive">
+        <div className="flex flex-col md:flex-row justify-between  items-start md:items-end gap-3 sm:gap-4 md:gap-6">
           <div className="flex flex-col gap-1 sm:gap-2 w-full md:w-auto">
-            <h1 className="text-gray-300 italic text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light">blogs</h1>
+            <h1 className="text-gray-400 italic text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light">blogs</h1>
             <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 max-w-md">
               lorem ipsum dolor sit amet, consectetur adipiscing elit, nulla ornare eget felis.
             </p>
           </div>
           <div className="flex flex-col items-start md:items-end w-full md:w-auto">
-            <p className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light">fresh</p>
+            <p className="text-gray-400 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light">fresh</p>
             <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black">insights.</p>
           </div>
         </div>

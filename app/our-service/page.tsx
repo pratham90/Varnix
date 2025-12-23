@@ -168,7 +168,7 @@ const OurServicePage = () => {
         <Navbar />
         <PageLabel title="our services"/>
       <section className="w-full mt-10 sm:mt-12 md:mt-16">
-        <div className="w-full max-w-full mx-auto px-20 bg-gray-50">
+        <div className="w-full max-w-full mx-auto px-5 bg-gray-50">
           <div className="relative mb-12 md:mb-16 min-h-[500px]  sm:min-h-[600px] md:min-h-[700px] lg:min-h-[750px] overflow-hidden">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-6 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
               <h1 
@@ -400,14 +400,14 @@ const OurServicePage = () => {
               <div>
                 <p className="text-sm sm:text-base md:text-lg text-black mb-3">find us online.</p>
                 <div className="flex flex-row gap-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full border-4 border-pink-500 flex items-center justify-center bg-white hover:bg-pink-50 transition cursor-pointer">
-                    <FaInstagram className="text-black text-lg sm:text-xl md:text-2xl" />
+                  <div className="w-12 h-12 sm:w-10 sm:h-10 md:w-16 md:h-16 rounded-full border-4 border-pink-500 flex items-center justify-center bg-white hover:bg-pink-50 transition cursor-pointer">
+                    <FaInstagram className="text-black text-lg sm:text-lg md:text-xl" />
                   </div>
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full border-4 border-pink-500 flex items-center justify-center bg-white hover:bg-pink-50 transition cursor-pointer">
-                    <FaFacebookF className="text-black text-lg sm:text-xl md:text-2xl" />
+                  <div className="w-12 h-12 sm:w-10 sm:h-10 md:w-16 md:h-16 rounded-full border-4 border-pink-500 flex items-center justify-center bg-white hover:bg-pink-50 transition cursor-pointer">
+                    <FaFacebookF className="text-black text-lg sm:text-lg md:text-xl" />
                   </div>
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full border-4 border-pink-500 flex items-center justify-center bg-white hover:bg-pink-50 transition cursor-pointer">
-                    <FaXTwitter className="text-black text-lg sm:text-xl md:text-2xl" />
+                  <div className="w-12 h-12 sm:w-10 sm:h-10 md:w-16 md:h-16 rounded-full border-4 border-pink-500 flex items-center justify-center bg-white hover:bg-pink-50 transition cursor-pointer">
+                    <FaXTwitter className="text-black text-lg sm:text-lg md:text-xl" />
                   </div>
                 </div>
               </div>
@@ -473,7 +473,7 @@ const OurServicePage = () => {
                     placeholder="type here"
                   />
                 </div>
-                <div className="flex justify-end w-full">
+                <div className="flex justify-center  w-full">
                   <button
                     type="submit"
                     className="bg-pink-500 text-white px-6 sm:px-8 md:px-10 py-2 sm:py-2.5 md:py-3 text-sm sm:text-base md:text-lg rounded-lg hover:bg-pink-600 transition"

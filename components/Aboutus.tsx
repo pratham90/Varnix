@@ -38,7 +38,7 @@ const Aboutus = () => {
       <div className="w-full max-w-[1200px]  flex flex-col md:flex-row items-center gap-8 md:gap-16 py-10 px-4 sm:px-6 mt-6">
         
         {/* LEFT */}
-        <div className="flex-1 flex flex-col gap-4 items-start w-full">
+        <div className="flex-1 flex flex-col gap-4 items-start  w-full aboutus-content-mobile-center">
           <h2 className="text-sm sm:text-base md:text-lg uppercase tracking-wide text-gray-300">
             Brands don&apos;t just happen. We build them
           </h2>
@@ -49,19 +49,19 @@ const Aboutus = () => {
           </p>
 
           <button className="bg-pink-500 px-5 py-2 text-white text-sm sm:text-base rounded-full mt-4 hover:bg-pink-600 transition">
-            View more
+           View more
           </button>
         </div>
 
         {/* RIGHT */}
-        <div className="flex-1 flex flex-col gap-4 w-full">
+        <div className="flex-1 flex flex-col gap-4 w-full ">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 bg-pink-500 flex justify-center items-center rounded-full shrink-0" />
             <span className="font-bold text-xl md:text-2xl">4.9</span>
             <span className="text-pink-500 text-xl">★</span>
           </div>
 
-          <span className="text-sm sm:text-base text-gray-300">
+          <span className="text-sm sm:text-base  text-gray-300">
             average rating from 500+ clients
           </span>
 

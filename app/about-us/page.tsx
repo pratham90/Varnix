@@ -9,7 +9,25 @@ import Aboutus from "@/components/Aboutus";
 const Page = () => {
   const [isVisible, setIsVisible] = useState<{ [key: string]: boolean }>({});
   const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+ // Director state for Director's Note section
+  const [activeDirector, setActiveDirector] = useState(0);
 
+  const directors = [
+    {
+      name: "RISHI RAJ",
+      position: "Co-Founder & CMO",
+      description:
+        "Rishi Raj brings innovation and strategic direction to Varnix Media. As the co-founder, he refines internal structures, oversees branding and digital strategy, and shapes the agency’s core vision. His focus on streamlined execution and operational clarity has helped Varnix scale with discipline and creative integrity.",
+      note: "Director's note",
+    },
+    {
+      name: "VISHWAS BANSAL",
+      position: "CEO",
+      description:
+        "With a deep background in event marketing and a passion for large-scale creative execution, Vishwas has led Varnix into multiple industries—from high-profile sports leagues to nationwide artist tours. His core strength lies in building campaigns that are both visually striking and strategically grounded.",
+      note: "Director's note",
+    },
+  ];
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
 
@@ -52,7 +70,7 @@ const Page = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12 xl:p-16 ">
-          <div className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 items-start">
+          <div className="aboutus-intro-responsive flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 items-start">
             <div className="shrink-0 md:w-2/5">
               <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                 <span className="text-gray-500 block transition-all duration-700 delay-100">
@@ -86,9 +104,9 @@ const Page = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto relative h-full">
-          <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-start mb-12 md:mb-20 lg:mb-32">
-            <div ref={setRef("mission-heading")} className={`shrink-0 md:w-2/5 ${isVisible["mission-heading"] ? "slide-in-left-visible" : "slide-in-left-hidden"}`}>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-20 lg:mb-32 aboutus-section-mobile-center">
+            <div ref={setRef("mission-heading")} className={`shrink-0 w-full md:w-2/5 order-1 md:order-none ${isVisible["mission-heading"] ? "slide-in-left-visible" : "slide-in-left-hidden"}`}> 
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-center mx-auto md:text-left md:mx-0">
                 <span className="text-gray-400 block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-1 transition-all duration-700 delay-100">
                   Our
                 </span>
@@ -103,8 +121,8 @@ const Page = () => {
               </h2>
             </div>
 
-            <div ref={setRef("mission-desc")} className={`flex-1 space-y-5 md:space-y-6 pt-2 ${isVisible["mission-desc"] ? "slide-in-right-visible" : "slide-in-right-hidden"}`} style={{ transitionDelay: '0.1s' }}>
-              <p className="text-base sm:text-lg md:text-xl text-black leading-relaxed transition-all duration-700 delay-300">
+            <div ref={setRef("mission-desc")} className={`flex-1 w-full space-y-5 md:space-y-6 pt-2 order-2 md:order-none aboutus-desc-mobile-center ${isVisible["mission-desc"] ? "slide-in-right-visible" : "slide-in-right-hidden"}`} style={{ transitionDelay: '0.1s' }}>
+              <p className="text-base sm:text-lg md:text-xl text-black leading-relaxed transition-all duration-700 delay-300 text-center mx-auto md:text-left md:mx-0">
                 Our mission is to build intelligent, imaginative, and impactful marketing ecosystems that empower
 brands to communicate with authenticity and purpose. We help businesses scale fearlessly by
 combining strategy, creativity, and technology to create meaningful connections in an ever-evolving
@@ -114,17 +132,17 @@ digital world.
             </div>
           </div>
 
-          <div className="flex   gap-8 md:gap-12 lg:gap-16 items-start mb-12 md:mb-20 lg:mb-32">
-            <div ref={setRef("vision-desc")} className={`flex-1 space-y-5 md:space-y-6 pt-2 ${isVisible["vision-desc"] ? "slide-in-left-visible" : "slide-in-left-hidden"}`}>
-              <p className="text-base sm:text-lg md:text-xl text-black leading-relaxed transition-all duration-700 delay-300">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-20 lg:mb-32 aboutus-section-mobile-center">
+            <div ref={setRef("vision-desc")} className={`flex-1 w-full space-y-5 md:space-y-6 pt-2 order-2 md:order-none aboutus-desc-mobile-center ${isVisible["vision-desc"] ? "slide-in-left-visible" : "slide-in-left-hidden"}`}>
+              <p className="text-base sm:text-lg md:text-xl text-black leading-relaxed transition-all duration-700 delay-300 text-center mx-auto md:text-left md:mx-0">
                We envision becoming a globally recognized creative force that transforms ideas into movements and
 campaigns into lasting conversations. By pushing boundaries and embracing innovation, we aim to turn
 brands into cultural symbols that leave a lasting legacy across industries and markets.
               </p>
             
             </div>
-            <div ref={setRef("vision-heading")} className={`shrink-0 md:w-2/5 ${isVisible["vision-heading"] ? "slide-in-right-visible" : "slide-in-right-hidden"}`} style={{ transitionDelay: '0.1s' }}>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
+            <div ref={setRef("vision-heading")} className={`shrink-0 w-full md:w-2/5 order-1 md:order-none ${isVisible["vision-heading"] ? "slide-in-right-visible" : "slide-in-right-hidden"}`} style={{ transitionDelay: '0.1s' }}>
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-center mx-auto md:text-left md:mx-0">
                 <span className="text-gray-400 block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-1 transition-all duration-700 delay-100">
                   Our
                 </span>
@@ -139,17 +157,17 @@ brands into cultural symbols that leave a lasting legacy across industries and m
               </h2>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-12 lg:gap-16 items-start mb-12 md:mb-20 lg:mb-32">
-            <div ref={setRef("promise-desc")} className={`flex-1 space-y-5 md:space-y-6 pt-2 ${isVisible["promise-desc"] ? "slide-in-right-visible" : "slide-in-right-hidden"}`}>
-              <p className="text-base sm:text-lg md:text-xl text-black leading-relaxed transition-all duration-700 delay-300">
+          <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-20 lg:mb-32 aboutus-section-mobile-center">
+            <div ref={setRef("promise-desc")} className={`flex-1 w-full space-y-5 md:space-y-6 pt-2 order-2 md:order-none aboutus-desc-mobile-center ${isVisible["promise-desc"] ? "slide-in-right-visible" : "slide-in-right-hidden"}`}>
+              <p className="text-base sm:text-lg md:text-xl text-black leading-relaxed transition-all duration-700 delay-300 text-center mx-auto md:text-left md:mx-0">
               At Varnix, we promise marketing that is never generic and never disconnected. Every solution we create
 is custom-built, insight-driven, and culturally relevant—designed to grow with your brand, adapt to
 change, and deliver long-term impact.
               </p>
             
             </div>
-            <div ref={setRef("promise-heading")} className={`shrink-0 md:w-2/5 ${isVisible["promise-heading"] ? "slide-in-left-visible" : "slide-in-left-hidden"}`} style={{ transitionDelay: '0.1s' }}>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
+            <div ref={setRef("promise-heading")} className={`shrink-0 w-full md:w-2/5 order-1 md:order-none ${isVisible["promise-heading"] ? "slide-in-left-visible" : "slide-in-left-hidden"}`} style={{ transitionDelay: '0.1s' }}>
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-center mx-auto md:text-left md:mx-0">
                 <span className="text-gray-400 block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-1 transition-all duration-700 delay-100">
                   Our
                 </span>
@@ -187,31 +205,23 @@ change, and deliver long-term impact.
 
           <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-pink-100 to-transparent opacity-50 rounded-tl-3xl"></div>
 
-          <div className="relative rounded-tl-3xl bg-white/50 backdrop-blur-sm p-6 md:p-8 lg:p-12 hover:shadow-lg transition-shadow duration-300">
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+          <div className="director-note-responsive relative rounded-tl-3xl bg-white/50 backdrop-blur-sm p-6 md:p-8 lg:p-12 hover:shadow-lg transition-shadow duration-300">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-start director-note-flex-mobile">
               <div className="shrink-0">
                 <p className="text-pink-500 text-sm md:text-base font-medium mb-4 transition-all duration-700 delay-100">
-                  Director&apos;s note
+                  {directors[activeDirector].note}
                 </p>
                 <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black mb-2 transition-all duration-700 delay-200">
-                  RISHI RAJ
+                  {directors[activeDirector].name}
                 </h2>
                 <p className="text-lg md:text-xl text-black font-medium transition-all duration-700 delay-300">
-                  Co-Founder & CMO
+                  {directors[activeDirector].position}
                 </p>
               </div>
 
               <div className="flex-1 space-y-6">
                 <p className="text-base md:text-lg text-black leading-relaxed max-w-2xl transition-all duration-700 delay-300">
-                  With a deep background in event marketing and a passion for large-scale creative execution, Vishwas
-has led Varnix into multiple industries—from high-profile sports leagues to nationwide artist tours. His
-core strength lies in building campaigns that are both visually striking and strategically grounded.
-
-
-Rishi Raj brings innovation and strategic direction to Varnix Media. As the co-founder, he refines internal
-structures, oversees branding and digital strategy, and shapes the agency’s core vision. His focus on
-streamlined execution and operational clarity has helped Varnix scale with discipline and creative
-integrity.
+                  {directors[activeDirector].description}
                 </p>
 
                 <div className="flex items-center gap-4 mt-8 transition-all duration-700 delay-400 hover:scale-105">
@@ -220,17 +230,17 @@ integrity.
                   </div>
                   <div>
                     <p className="text-lg md:text-xl font-semibold text-black">
-                      RISHI RAJ
+                      {directors[activeDirector].name}
                     </p>
                     <p className="text-sm md:text-base text-black">
-                      Co-Founder & CMO
+                      {directors[activeDirector].position}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-2 mt-6">
-                  <div className="w-2 h-2 rounded-full bg-black hover:bg-pink-500 transition-colors duration-300 cursor-pointer"></div>
-                  <div className="w-2 h-2 rounded-full bg-black hover:bg-pink-500 transition-colors duration-300 cursor-pointer"></div>
+                <div className="flex flex-row gap-2 mt-6 justify-center w-full director-note-dots-row">
+                  <div className={`w-2 h-2 rounded-full ${activeDirector === 0 ? "bg-pink-500" : "bg-black"} hover:bg-pink-500 transition-colors duration-300 cursor-pointer`} onClick={() => setActiveDirector(0)}></div>
+                  <div className={`w-2 h-2 rounded-full ${activeDirector === 1 ? "bg-pink-500" : "bg-black"} hover:bg-pink-500 transition-colors duration-300 cursor-pointer`} onClick={() => setActiveDirector(1)}></div>
                 </div>
               </div>
             </div>
@@ -262,7 +272,7 @@ integrity.
                 <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800 group-hover:from-gray-500 group-hover:to-gray-700 transition-all duration-300"></div>
               </div>
               <p className="text-white text-lg md:text-xl font-medium group-hover:text-pink-400 transition-colors duration-300">
-                Pratham Rathore
+                Vishwas Bansal
               </p>
             </div>
 
