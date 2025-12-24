@@ -8,6 +8,7 @@ import Label from "@/components/Label";
 import { FaQuoteLeft } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 import Image from "next/image";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 export default function Home() {
   const [visibleItems, setVisibleItems] = useState<{ [key: string]: boolean }>({});
@@ -251,11 +252,11 @@ export default function Home() {
         {/* INNER CONTAINER */}
         <div className="mx-auto w-full max-w-[1200px] space-y-10">
           {/* HEADING */}
-          <div className="flex flex-col items-center sm:items-end text-base sm:text-lg md:text-xl">
+          <div className="flex flex-col   items-center text-base sm:text-lg md:text-xl">
             <h2 className="text-pink-600 text-xl sm:text-xl mb-3 sm:mb-5 font-bold">
               Why Brands Choose Varnix ?
             </h2>
-            <p className="text-center sm:text-right max-w-xl leading-relaxed">
+            <p className="text-center  max-w-xl leading-relaxed">
               Choosing the right partner defines how far a brand can go. At
               Varnix, we blend strategy, creativity, and innovation to help
               brands stand out, stay relevant, and grow with purpose.
@@ -378,41 +379,7 @@ export default function Home() {
             Say <span className="text-gray-200">about us.</span>
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center w-full items-start gap-3 sm:gap-5 mt-6">
-            <FaQuoteLeft className="text-6xl sm:text-8xl md:text-[10rem] text-gray-200 shrink-0 self-center sm:self-start" />
-
-            <div className="py-2 sm:py-4 max-w-xl">
-              <p className="text-sm sm:text-base">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <p className="text-sm sm:text-base">
-                Iure nesciunt, debitis voluptatem dolorem deleniti
-              </p>
-              <p className="text-sm sm:text-base">
-                neque eum a incidunt rerum ea earum cum assumenda minus
-              </p>
-              <p className="text-sm sm:text-base">
-                neque eum a incidunt rerum ea earum cum assumenda minus
-              </p>
-              <p className="text-sm sm:text-base">
-                neque eum a incidunt rerum ea earum cum assumenda minus
-              </p>
-
-              <div className="flex items-end gap-3 mt-5">
-                <Image
-                  src="/img1.avif"
-                  alt="profilepic"
-                  width={40}
-                  height={40}
-                  className="rounded-full w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14"
-                />
-                <div className="flex flex-col items-start text-sm sm:text-base">
-                  <p className="font-bold tracking-tight">Pratham Rathore</p>
-                  <p className="text-gray-300">India</p>
-                </div>
-              </div>
-            </div>
-          </div>
+              <TestimonialCarousel />
         </div>
       </div>
 
